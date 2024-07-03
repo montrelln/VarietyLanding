@@ -10,12 +10,12 @@ class Home extends StatefulWidget {
 }
 
 class _Home extends State<Home> {
-  bool adjustPhone = false;
+  bool adjustForPhone = false;
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance
-        .addPostFrameCallback((_) => adjustPhoneImage(context));
+        .addPostFrameCallback((_) => updateNeedsAdjustmentForPhone(context));
   }
 
   void _sendEmail() {
@@ -31,12 +31,11 @@ class _Home extends State<Home> {
     }
   }
 
-  void adjustPhoneImage(context) {
+  void updateNeedsAdjustmentForPhone(context) {
     double width = MediaQuery.sizeOf(context).width;
-    print(width);
-    if (width < 1200) {
+    if (width < 1000) {
       setState(() {
-        adjustPhone = true;
+        adjustForPhone = true;
       });
     }
   }
@@ -116,7 +115,9 @@ class _Home extends State<Home> {
 
     var appStoreColumn = Column(
       children: [
-        const SizedBox(height: 150),
+        adjustForPhone == true
+            ? const SizedBox(height: 0)
+            : const SizedBox(height: 150),
         SizedBox(
             height: 120,
             width: 120,
@@ -235,86 +236,30 @@ class _Home extends State<Home> {
         ),
       ],
     );
+
+    var layoutWeb = Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        appStoreColumn,
+        const SizedBox(
+          width: 150,
+        ),
+        iphoneImageColumn
+      ],
+    );
+
+    var layoutPhone = Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[appStoreColumn, iphoneImageColumn],
+    );
+
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: appBar,
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(20.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              appStoreColumn,
-              Visibility(
-                visible: !adjustPhone,
-                child: const SizedBox(
-                  width: 150,
-                ),
-              ),
-              adjustPhone == true
-                  ? Row(
-                      children: [
-                        Stack(
-                          children: [
-                            Material(
-                              elevation: 4,
-                              child: SizedBox(
-                                height: 800,
-                                width: 400,
-                                child: Image.asset(
-                                  'lib/assets/images/blankphone.jpg',
-                                  fit: BoxFit.fill,
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.fromLTRB(20, 40, 0, 0),
-                              child: SizedBox(
-                                height: 715,
-                                width: 360,
-                                child: Image.asset(
-                                  'lib/assets/images/nearby.png',
-                                  fit: BoxFit.fill,
-                                ),
-                              ),
-                            ),
-                          ],
-                        )
-                      ],
-                    )
-                  : Column(
-                      children: [
-                        Stack(
-                          children: [
-                            Material(
-                              elevation: 4,
-                              child: SizedBox(
-                                height: 800,
-                                width: 400,
-                                child: Image.asset(
-                                  'lib/assets/images/blankphone.jpg',
-                                  fit: BoxFit.fill,
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.fromLTRB(20, 40, 0, 0),
-                              child: SizedBox(
-                                height: 715,
-                                width: 360,
-                                child: Image.asset(
-                                  'lib/assets/images/nearby.png',
-                                  fit: BoxFit.fill,
-                                ),
-                              ),
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
-            ],
-          ),
-        ),
+            padding: const EdgeInsets.all(20.0),
+            child: adjustForPhone == true ? layoutPhone : layoutWeb),
       ),
       bottomNavigationBar: const Row(
         mainAxisAlignment: MainAxisAlignment.end,
