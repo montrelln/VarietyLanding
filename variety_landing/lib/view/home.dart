@@ -205,9 +205,17 @@ class _Home extends State<Home> {
                               borderRadius:
                                   const BorderRadius.all(Radius.circular(0)),
                               border: Border.all(color: Colors.white)),
-                          child: Image.asset(
-                            'lib/assets/images/nearby.png',
-                            fit: BoxFit.fill,
+                          child: Stack(
+                            children: [
+                              Image.asset(
+                                'lib/assets/images/nearby.png',
+                                fit: BoxFit.fill,
+                              ),
+                              Image.asset(
+                                'lib/assets/images/blankphone.jpg',
+                                fit: BoxFit.fill,
+                              )
+                            ],
                           ),
                         )
                       ],
