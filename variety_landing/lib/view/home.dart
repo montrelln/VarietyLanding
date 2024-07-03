@@ -101,131 +101,134 @@ class _Home extends State<Home> {
       ),
       body: Container(
         color: Colors.black,
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(0, 100, 0, 0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Column(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Column(
+              children: [
+                const SizedBox(height: 150),
+                SizedBox(
+                    height: 120,
+                    width: 120,
+                    child: Image.asset(
+                      'lib/assets/images/heart.png',
+                      fit: BoxFit.fill,
+                    )),
+                const SizedBox(height: 30),
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const SizedBox(height: 50),
-                    SizedBox(
-                        height: 120,
-                        width: 120,
-                        child: Image.asset(
-                          'lib/assets/images/heart.png',
-                          fit: BoxFit.fill,
-                        )),
-                    const SizedBox(height: 30),
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 40,
-                              fontWeight: FontWeight.bold),
-                          'Free Dating',
-                        ),
-                      ],
+                    Text(
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 40,
+                          fontWeight: FontWeight.bold),
+                      'Free Dating',
                     ),
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 40,
-                              fontWeight: FontWeight.bold),
-                          'For Singles Worldwide',
-                        ),
-                      ],
+                  ],
+                ),
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 40,
+                          fontWeight: FontWeight.bold),
+                      'For Singles Worldwide',
                     ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          width: 400,
-                          child: Text(
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold),
-                            'Variety is a totally free dating app for singles. You can search millions of members and communicate with them totally free. A credit card is never needed!',
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        InkWell(
-                          onTap: () {},
-                          child: SizedBox(
-                              height: 65,
-                              width: 210,
-                              child: Image.asset(
-                                'lib/assets/images/appstorenew.png',
-                                fit: BoxFit.fill,
-                              )),
-                        ),
-                        InkWell(
-                          onTap: () {},
-                          child: SizedBox(
-                              height: 100,
-                              width: 250,
-                              child: Image.asset(
-                                'lib/assets/images/googleplaynew.png',
-                                fit: BoxFit.fill,
-                              )),
-                        )
-                      ],
-                    )
                   ],
                 ),
                 const SizedBox(
-                  width: 150,
+                  height: 10,
                 ),
-                Column(
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          height: 800,
-                          width: 450,
-                          decoration: BoxDecoration(
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(0)),
-                              border: Border.all(color: Colors.white)),
-                          child: Stack(
-                            children: [
-                              Image.asset(
-                                'lib/assets/images/nearby.png',
-                                fit: BoxFit.fill,
-                              ),
-                              Image.asset(
-                                'lib/assets/images/blankphone.jpg',
-                                fit: BoxFit.fill,
-                              )
-                            ],
-                          ),
-                        )
-                      ],
+                    SizedBox(
+                      width: 400,
+                      child: Text(
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold),
+                        'Variety is a totally free dating app for singles. You can search millions of members and communicate with them totally free. A credit card is never needed!',
+                      ),
                     ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    InkWell(
+                      onTap: () {},
+                      child: SizedBox(
+                          height: 65,
+                          width: 210,
+                          child: Image.asset(
+                            'lib/assets/images/appstorenew.png',
+                            fit: BoxFit.fill,
+                          )),
+                    ),
+                    InkWell(
+                      onTap: () {},
+                      child: SizedBox(
+                          height: 100,
+                          width: 250,
+                          child: Image.asset(
+                            'lib/assets/images/googleplaynew.png',
+                            fit: BoxFit.fill,
+                          )),
+                    )
                   ],
                 )
               ],
             ),
-          ),
+            const SizedBox(
+              width: 150,
+            ),
+            Column(
+              children: [
+                const SizedBox(height: 30),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      height: 800,
+                      width: 400,
+                      child: Stack(
+                        children: [
+                          SizedBox(
+                            height: 800,
+                            width: 400,
+                            child: Image.asset(
+                              'lib/assets/images/blankphone.jpg',
+                              fit: BoxFit.fill,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(20, 40, 0, 0),
+                            child: SizedBox(
+                              height: 715,
+                              width: 360,
+                              child: Image.asset(
+                                'lib/assets/images/nearby.png',
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ],
+            )
+          ],
         ),
       ),
       floatingActionButton: const Text(
