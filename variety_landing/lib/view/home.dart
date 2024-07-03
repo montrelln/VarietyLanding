@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart' as url;
 
 class Home extends StatefulWidget {
   final title;
@@ -9,6 +10,19 @@ class Home extends StatefulWidget {
 }
 
 class _Home extends State<Home> {
+  void _sendEmail() {
+    try {
+      final Uri emailLaunchUri = Uri(
+        scheme: 'mailto',
+        path: 'support@variety.net',
+        queryParameters: {'subject': 'Support', 'body': ""},
+      );
+      url.launchUrl(emailLaunchUri);
+    } catch (e) {
+      print(e);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,7 +59,9 @@ class _Home extends State<Home> {
                   width: 10,
                 ),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    _sendEmail();
+                  },
                   child: const Text(
                     "Contact",
                     style: TextStyle(
