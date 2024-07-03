@@ -14,38 +14,56 @@ class _Home extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Row(
+        title: Column(
           children: [
-            Text(
-              widget.title,
-              style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold),
+            const SizedBox(
+              height: 25,
             ),
-            const Expanded(
-              child: SizedBox(),
-            ),
-            const Text(
-              "Home",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold),
+            Row(
+              children: [
+                Text(
+                  widget.title,
+                  style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold),
+                ),
+                const Expanded(
+                  child: SizedBox(),
+                ),
+                const Text(
+                  "Home",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                const Text(
+                  "Contact",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(
+                  width: 5,
+                ),
+              ],
             ),
             const SizedBox(
-              width: 10,
+              height: 10,
             ),
-            const Text(
-              "Contact",
-              style: TextStyle(
+            const Row(
+              children: [
+                Expanded(
+                    child: Divider(
                   color: Colors.white,
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(
-              width: 5,
-            ),
+                ))
+              ],
+            )
           ],
         ),
       ),
@@ -109,8 +127,8 @@ class _Home extends State<Home> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SizedBox(
-                            height: 500,
-                            width: 300,
+                            height: 800,
+                            width: 500,
                             child: Image.asset(
                               'lib/assets/images/nearby.png',
                               fit: BoxFit.fill,
@@ -124,9 +142,9 @@ class _Home extends State<Home> {
           ),
         ),
       ),
-      floatingActionButton: Text(
+      floatingActionButton: const Text(
         "© Variety Dating 2024",
-        style: const TextStyle(
+        style: TextStyle(
             color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
       ),
     );
