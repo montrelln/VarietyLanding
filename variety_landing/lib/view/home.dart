@@ -113,9 +113,6 @@ class _Home extends State<Home> {
 
     var appStoreColumn = Column(
       children: [
-        adjustForPhone == true
-            ? const SizedBox(height: 0)
-            : const SizedBox(height: 150),
         SizedBox(
             height: 120,
             width: 120,
