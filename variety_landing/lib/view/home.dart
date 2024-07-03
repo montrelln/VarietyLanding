@@ -83,6 +83,7 @@ class _Home extends State<Home> {
               children: <Widget>[
                 Column(
                   children: [
+                    const SizedBox(height: 250),
                     const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -157,7 +158,7 @@ class _Home extends State<Home> {
                   ],
                 ),
                 const SizedBox(
-                  width: 70,
+                  width: 150,
                 ),
                 Column(
                   children: [
