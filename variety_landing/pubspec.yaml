@@ -64,6 +64,8 @@ flutter:
        - lib/assets/images/appstorenew.png
        - lib/assets/images/googleplaynew.png
        - lib/assets/images/nearby.png
+       - lib/assets/images/heart.png
+       - lib/assets/images/blankphone.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

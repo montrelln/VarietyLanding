@@ -35,6 +35,16 @@ class _Home extends State<Home> {
             ),
             Row(
               children: [
+                SizedBox(
+                    height: 25,
+                    width: 25,
+                    child: Image.asset(
+                      'lib/assets/images/heart.png',
+                      fit: BoxFit.fill,
+                    )),
+                const SizedBox(
+                  width: 10,
+                ),
                 Text(
                   widget.title,
                   style: const TextStyle(
@@ -99,7 +109,14 @@ class _Home extends State<Home> {
               children: <Widget>[
                 Column(
                   children: [
-                    const SizedBox(height: 250),
+                    const SizedBox(height: 150),
+                    SizedBox(
+                        height: 100,
+                        width: 250,
+                        child: Image.asset(
+                          'lib/assets/images/heart.png',
+                          fit: BoxFit.fill,
+                        )),
                     const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
