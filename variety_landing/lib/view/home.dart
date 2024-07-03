@@ -270,11 +270,7 @@ class _Home extends State<Home> {
                   elevation: 4,
                   child: SizedBox(
                     height: 800,
-                    width: adjustForPhone == true
-                        ? MediaQuery.sizeOf(context).width > 400
-                            ? 400
-                            : MediaQuery.sizeOf(context).width - 50
-                        : 400,
+                    width: adjustForPhone == true ? 300 : 400,
                     child: Image.asset(
                       'lib/assets/images/blankphone.jpg',
                       fit: BoxFit.fill,
@@ -285,11 +281,7 @@ class _Home extends State<Home> {
                   padding: const EdgeInsets.fromLTRB(20, 40, 0, 0),
                   child: SizedBox(
                     height: 715,
-                    width: adjustForPhone == true
-                        ? MediaQuery.sizeOf(context).width > 360
-                            ? 360
-                            : MediaQuery.sizeOf(context).width - 90
-                        : 360,
+                    width: adjustForPhone == true ? 265 : 365,
                     child: Image.asset(
                       'lib/assets/images/nearby.png',
                       fit: BoxFit.fill,
@@ -308,7 +300,7 @@ class _Home extends State<Home> {
       children: <Widget>[
         appStoreColumn,
         const SizedBox(
-          width: 20,
+          width: 100,
         ),
         iphoneImageColumn
       ],
