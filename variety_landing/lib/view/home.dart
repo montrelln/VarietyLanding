@@ -36,8 +36,8 @@ class _Home extends State<Home> {
             Row(
               children: [
                 SizedBox(
-                    height: 25,
-                    width: 25,
+                    height: 15,
+                    width: 15,
                     child: Image.asset(
                       'lib/assets/images/heart.png',
                       fit: BoxFit.fill,
@@ -109,14 +109,15 @@ class _Home extends State<Home> {
               children: <Widget>[
                 Column(
                   children: [
-                    const SizedBox(height: 150),
+                    const SizedBox(height: 50),
                     SizedBox(
-                        height: 100,
-                        width: 250,
+                        height: 120,
+                        width: 120,
                         child: Image.asset(
                           'lib/assets/images/heart.png',
                           fit: BoxFit.fill,
                         )),
+                    const SizedBox(height: 30),
                     const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
