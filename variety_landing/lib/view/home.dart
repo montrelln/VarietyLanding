@@ -117,10 +117,10 @@ class _Home extends State<Home> {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: null,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+      floatingActionButton: Text(
+        "© Variety Dating 2024",
+        style: const TextStyle(
+            color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
       ),
     );
   }
