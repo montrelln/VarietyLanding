@@ -14,10 +14,39 @@ class _Home extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Text(
-          widget.title,
-          style: const TextStyle(
-              color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
+        title: Row(
+          children: [
+            Text(
+              widget.title,
+              style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold),
+            ),
+            Expanded(
+              child: SizedBox(),
+            ),
+            Text(
+              "Home",
+              style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            Text(
+              "Contact",
+              style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              width: 5,
+            ),
+          ],
         ),
       ),
       body: Container(
@@ -54,6 +83,9 @@ class _Home extends State<Home> {
                         ),
                       ],
                     ),
+                    SizedBox(
+                      height: 10,
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -62,7 +94,6 @@ class _Home extends State<Home> {
                               color: Colors.white,
                               fontSize: 12,
                               fontWeight: FontWeight.bold),
-                          textAlign: TextAlign.center,
                           'Variety is a totally free dating app for singles. You can search millions of members and comminuate with them totally free. A credit card is never needed!',
                         ),
                       ],
