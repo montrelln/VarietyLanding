@@ -123,7 +123,9 @@ class _Home extends State<Home> {
               'lib/assets/images/heart.png',
               fit: BoxFit.fill,
             )),
-        const SizedBox(height: 30),
+        adjustForPhone == true
+            ? const SizedBox(height: 20)
+            : const SizedBox(height: 30),
         const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -136,65 +138,123 @@ class _Home extends State<Home> {
             ),
           ],
         ),
-        const Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 40,
-                  fontWeight: FontWeight.bold),
-              'For Singles Worldwide',
-            ),
-          ],
-        ),
+        adjustForPhone == true
+            ? const Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 40,
+                        fontWeight: FontWeight.bold),
+                    'For Singles ',
+                  ),
+                  Text(
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 40,
+                        fontWeight: FontWeight.bold),
+                    'Worldwide',
+                  ),
+                ],
+              )
+            : const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 40,
+                        fontWeight: FontWeight.bold),
+                    'For Singles Worldwide',
+                  ),
+                ],
+              ),
         const SizedBox(
           height: 10,
         ),
-        const Row(
+        Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(
-              width: 400,
-              child: Text(
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold),
-                'Variety is a totally free dating app for singles. You can search millions of members and communicate with them totally free. A credit card is never needed!',
-              ),
-            ),
+            adjustForPhone == true
+                ? const SizedBox(
+                    width: 300,
+                    child: Text(
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold),
+                      'Variety is a totally free dating app for singles. You can search millions of members and communicate with them totally free. A credit card is never needed!',
+                    ),
+                  )
+                : const SizedBox(
+                    width: 400,
+                    child: Text(
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold),
+                      'Variety is a totally free dating app for singles. You can search millions of members and communicate with them totally free. A credit card is never needed!',
+                    ),
+                  ),
           ],
         ),
         const SizedBox(
           height: 20,
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            InkWell(
-              onTap: () {},
-              child: SizedBox(
-                  height: 65,
-                  width: 210,
-                  child: Image.asset(
-                    'lib/assets/images/appstorenew.png',
-                    fit: BoxFit.fill,
-                  )),
-            ),
-            InkWell(
-              onTap: () {},
-              child: SizedBox(
-                  height: 100,
-                  width: 250,
-                  child: Image.asset(
-                    'lib/assets/images/googleplaynew.png',
-                    fit: BoxFit.fill,
-                  )),
-            )
-          ],
-        )
+        adjustForPhone == true
+            ? Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  InkWell(
+                    onTap: () {},
+                    child: SizedBox(
+                        height: 65,
+                        width: 210,
+                        child: Image.asset(
+                          'lib/assets/images/appstorenew.png',
+                          fit: BoxFit.fill,
+                        )),
+                  ),
+                  InkWell(
+                    onTap: () {},
+                    child: SizedBox(
+                        height: 100,
+                        width: 250,
+                        child: Image.asset(
+                          'lib/assets/images/googleplaynew.png',
+                          fit: BoxFit.fill,
+                        )),
+                  )
+                ],
+              )
+            : Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  InkWell(
+                    onTap: () {},
+                    child: SizedBox(
+                        height: 65,
+                        width: 210,
+                        child: Image.asset(
+                          'lib/assets/images/appstorenew.png',
+                          fit: BoxFit.fill,
+                        )),
+                  ),
+                  InkWell(
+                    onTap: () {},
+                    child: SizedBox(
+                        height: 100,
+                        width: 250,
+                        child: Image.asset(
+                          'lib/assets/images/googleplaynew.png',
+                          fit: BoxFit.fill,
+                        )),
+                  )
+                ],
+              )
       ],
     );
 
