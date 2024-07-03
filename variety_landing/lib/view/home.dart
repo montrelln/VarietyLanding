@@ -14,7 +14,7 @@ class _Home extends State<Home> {
     try {
       final Uri emailLaunchUri = Uri(
         scheme: 'mailto',
-        path: 'support@variety.net',
+        path: 'admin@varietydating.net',
         queryParameters: {'subject': 'Support', 'body': ""},
       );
       url.launchUrl(emailLaunchUri);
@@ -55,15 +55,12 @@ class _Home extends State<Home> {
                 const Expanded(
                   child: SizedBox(),
                 ),
-                InkWell(
-                  onTap: () {},
-                  child: const Text(
-                    "Home",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold),
-                  ),
+                const Text(
+                  "Home",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(
                   width: 10,
@@ -200,28 +197,31 @@ class _Home extends State<Home> {
                     SizedBox(
                       height: 800,
                       width: 400,
-                      child: Stack(
-                        children: [
-                          SizedBox(
-                            height: 800,
-                            width: 400,
-                            child: Image.asset(
-                              'lib/assets/images/blankphone.jpg',
-                              fit: BoxFit.fill,
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(20, 40, 0, 0),
-                            child: SizedBox(
-                              height: 715,
-                              width: 360,
+                      child: Material(
+                        elevation: 10,
+                        child: Stack(
+                          children: [
+                            SizedBox(
+                              height: 800,
+                              width: 400,
                               child: Image.asset(
-                                'lib/assets/images/nearby.png',
+                                'lib/assets/images/blankphone.jpg',
                                 fit: BoxFit.fill,
                               ),
                             ),
-                          ),
-                        ],
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(20, 40, 0, 0),
+                              child: SizedBox(
+                                height: 715,
+                                width: 360,
+                                child: Image.asset(
+                                  'lib/assets/images/nearby.png',
+                                  fit: BoxFit.fill,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     )
                   ],
