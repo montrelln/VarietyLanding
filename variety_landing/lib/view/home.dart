@@ -271,7 +271,9 @@ class _Home extends State<Home> {
                   child: SizedBox(
                     height: 800,
                     width: adjustForPhone == true
-                        ? MediaQuery.sizeOf(context).width - 50
+                        ? MediaQuery.sizeOf(context).width > 400
+                            ? 400
+                            : MediaQuery.sizeOf(context).width - 50
                         : 400,
                     child: Image.asset(
                       'lib/assets/images/blankphone.jpg',
@@ -284,7 +286,9 @@ class _Home extends State<Home> {
                   child: SizedBox(
                     height: 715,
                     width: adjustForPhone == true
-                        ? MediaQuery.sizeOf(context).width - 90
+                        ? MediaQuery.sizeOf(context).width > 360
+                            ? 360
+                            : MediaQuery.sizeOf(context).width - 90
                         : 360,
                     child: Image.asset(
                       'lib/assets/images/nearby.png',
