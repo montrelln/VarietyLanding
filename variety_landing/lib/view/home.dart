@@ -10,6 +10,14 @@ class Home extends StatefulWidget {
 }
 
 class _Home extends State<Home> {
+  bool adjustPhone = false;
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance
+        .addPostFrameCallback((_) => adjustPhoneImage(context));
+  }
+
   void _sendEmail() {
     try {
       final Uri emailLaunchUri = Uri(
@@ -23,190 +31,240 @@ class _Home extends State<Home> {
     }
   }
 
+  void adjustPhoneImage(context) {
+    double width = MediaQuery.sizeOf(context).width;
+    print(width);
+    if (width < 1200) {
+      setState(() {
+        adjustPhone = true;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: Column(
-          children: [
-            const SizedBox(
-              height: 25,
-            ),
-            Row(
-              children: [
-                SizedBox(
-                    height: 15,
-                    width: 15,
-                    child: Image.asset(
-                      'lib/assets/images/heart.png',
-                      fit: BoxFit.fill,
-                    )),
-                const SizedBox(
-                  width: 10,
-                ),
-                Text(
-                  widget.title,
-                  style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold),
-                ),
-                const Expanded(
-                  child: SizedBox(),
-                ),
-                const Text(
-                  "Home",
+    var appBar = AppBar(
+      backgroundColor: Colors.black,
+      title: Column(
+        children: [
+          const SizedBox(
+            height: 25,
+          ),
+          Row(
+            children: [
+              SizedBox(
+                  height: 15,
+                  width: 15,
+                  child: Image.asset(
+                    'lib/assets/images/heart.png',
+                    fit: BoxFit.fill,
+                  )),
+              const SizedBox(
+                width: 10,
+              ),
+              Text(
+                widget.title,
+                style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold),
+              ),
+              const Expanded(
+                child: SizedBox(),
+              ),
+              const Text(
+                "Home",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(
+                width: 10,
+              ),
+              InkWell(
+                onTap: () {
+                  _sendEmail();
+                },
+                child: const Text(
+                  "Contact",
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 14,
                       fontWeight: FontWeight.bold),
                 ),
-                const SizedBox(
-                  width: 10,
-                ),
-                InkWell(
-                  onTap: () {
-                    _sendEmail();
-                  },
-                  child: const Text(
-                    "Contact",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(
+                width: 5,
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          const Row(
+            children: [
+              Expanded(
+                  child: Divider(
+                color: Colors.white,
+              ))
+            ],
+          )
+        ],
+      ),
+    );
+
+    var appStoreColumn = Column(
+      children: [
+        const SizedBox(height: 150),
+        SizedBox(
+            height: 120,
+            width: 120,
+            child: Image.asset(
+              'lib/assets/images/heart.png',
+              fit: BoxFit.fill,
+            )),
+        const SizedBox(height: 30),
+        const Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 40,
+                  fontWeight: FontWeight.bold),
+              'Free Dating',
+            ),
+          ],
+        ),
+        const Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 40,
+                  fontWeight: FontWeight.bold),
+              'For Singles Worldwide',
+            ),
+          ],
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        const Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(
+              width: 400,
+              child: Text(
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold),
+                'Variety is a totally free dating app for singles. You can search millions of members and communicate with them totally free. A credit card is never needed!',
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            InkWell(
+              onTap: () {},
+              child: SizedBox(
+                  height: 65,
+                  width: 210,
+                  child: Image.asset(
+                    'lib/assets/images/appstorenew.png',
+                    fit: BoxFit.fill,
+                  )),
+            ),
+            InkWell(
+              onTap: () {},
+              child: SizedBox(
+                  height: 100,
+                  width: 250,
+                  child: Image.asset(
+                    'lib/assets/images/googleplaynew.png',
+                    fit: BoxFit.fill,
+                  )),
+            )
+          ],
+        )
+      ],
+    );
+
+    var iphoneImageColumn = Column(
+      children: [
+        const SizedBox(height: 30),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Stack(
+              children: [
+                Material(
+                  elevation: 4,
+                  child: SizedBox(
+                    height: 800,
+                    width: 400,
+                    child: Image.asset(
+                      'lib/assets/images/blankphone.jpg',
+                      fit: BoxFit.fill,
+                    ),
                   ),
                 ),
-                const SizedBox(
-                  width: 5,
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 40, 0, 0),
+                  child: SizedBox(
+                    height: 715,
+                    width: 360,
+                    child: Image.asset(
+                      'lib/assets/images/nearby.png',
+                      fit: BoxFit.fill,
+                    ),
+                  ),
                 ),
-              ],
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            const Row(
-              children: [
-                Expanded(
-                    child: Divider(
-                  color: Colors.white,
-                ))
               ],
             )
           ],
         ),
-      ),
-      body: Container(
-        color: Colors.black,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Column(
-              children: [
-                const SizedBox(height: 150),
-                SizedBox(
-                    height: 120,
-                    width: 120,
-                    child: Image.asset(
-                      'lib/assets/images/heart.png',
-                      fit: BoxFit.fill,
-                    )),
-                const SizedBox(height: 30),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 40,
-                          fontWeight: FontWeight.bold),
-                      'Free Dating',
-                    ),
-                  ],
+      ],
+    );
+    return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: appBar,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.all(20.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              appStoreColumn,
+              Visibility(
+                visible: !adjustPhone,
+                child: const SizedBox(
+                  width: 150,
                 ),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 40,
-                          fontWeight: FontWeight.bold),
-                      'For Singles Worldwide',
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      width: 400,
-                      child: Text(
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold),
-                        'Variety is a totally free dating app for singles. You can search millions of members and communicate with them totally free. A credit card is never needed!',
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    InkWell(
-                      onTap: () {},
-                      child: SizedBox(
-                          height: 65,
-                          width: 210,
-                          child: Image.asset(
-                            'lib/assets/images/appstorenew.png',
-                            fit: BoxFit.fill,
-                          )),
-                    ),
-                    InkWell(
-                      onTap: () {},
-                      child: SizedBox(
-                          height: 100,
-                          width: 250,
-                          child: Image.asset(
-                            'lib/assets/images/googleplaynew.png',
-                            fit: BoxFit.fill,
-                          )),
-                    )
-                  ],
-                )
-              ],
-            ),
-            const SizedBox(
-              width: 150,
-            ),
-            Column(
-              children: [
-                const SizedBox(height: 30),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      height: 800,
-                      width: 400,
-                      child: Material(
-                        elevation: 10,
-                        child: Stack(
+              ),
+              adjustPhone == true
+                  ? Row(
+                      children: [
+                        Stack(
                           children: [
-                            SizedBox(
-                              height: 800,
-                              width: 400,
-                              child: Image.asset(
-                                'lib/assets/images/blankphone.jpg',
-                                fit: BoxFit.fill,
+                            Material(
+                              elevation: 4,
+                              child: SizedBox(
+                                height: 800,
+                                width: 400,
+                                child: Image.asset(
+                                  'lib/assets/images/blankphone.jpg',
+                                  fit: BoxFit.fill,
+                                ),
                               ),
                             ),
                             Padding(
@@ -221,20 +279,57 @@ class _Home extends State<Home> {
                               ),
                             ),
                           ],
-                        ),
-                      ),
+                        )
+                      ],
                     )
-                  ],
-                ),
-              ],
-            )
-          ],
+                  : Column(
+                      children: [
+                        Stack(
+                          children: [
+                            Material(
+                              elevation: 4,
+                              child: SizedBox(
+                                height: 800,
+                                width: 400,
+                                child: Image.asset(
+                                  'lib/assets/images/blankphone.jpg',
+                                  fit: BoxFit.fill,
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(20, 40, 0, 0),
+                              child: SizedBox(
+                                height: 715,
+                                width: 360,
+                                child: Image.asset(
+                                  'lib/assets/images/nearby.png',
+                                  fit: BoxFit.fill,
+                                ),
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+            ],
+          ),
         ),
       ),
-      floatingActionButton: const Text(
-        "© Variety Dating 2024",
-        style: TextStyle(
-            color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
+      bottomNavigationBar: const Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Padding(
+            padding: EdgeInsets.fromLTRB(0, 0, 30, 10),
+            child: Text(
+              "© Variety Dating 2024",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold),
+            ),
+          ),
+        ],
       ),
     );
   }
