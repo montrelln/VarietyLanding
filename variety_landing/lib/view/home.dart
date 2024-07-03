@@ -263,22 +263,19 @@ class _Home extends State<Home> {
           children: [
             Stack(
               children: [
-                Material(
-                  elevation: 4,
-                  child: SizedBox(
-                    height: 800,
-                    width: adjustForPhone == true ? 300 : 400,
-                    child: Image.asset(
-                      'lib/assets/images/blankphone.jpg',
-                      fit: BoxFit.fill,
-                    ),
+                SizedBox(
+                  height: 800,
+                  width: adjustForPhone == true ? 300 : 400,
+                  child: Image.asset(
+                    'lib/assets/images/blankphone.jpg',
+                    fit: BoxFit.fill,
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 40, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(35, 50, 0, 0),
                   child: SizedBox(
-                    height: 715,
-                    width: adjustForPhone == true ? 265 : 365,
+                    height: 700,
+                    width: adjustForPhone == true ? 225 : 320,
                     child: Image.asset(
                       'lib/assets/images/nearby.png',
                       fit: BoxFit.fill,
