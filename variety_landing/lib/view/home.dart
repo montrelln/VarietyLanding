@@ -31,22 +31,28 @@ class _Home extends State<Home> {
                 const Expanded(
                   child: SizedBox(),
                 ),
-                const Text(
-                  "Home",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold),
+                InkWell(
+                  onTap: () {},
+                  child: const Text(
+                    "Home",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold),
+                  ),
                 ),
                 const SizedBox(
                   width: 10,
                 ),
-                const Text(
-                  "Contact",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold),
+                InkWell(
+                  onTap: () {},
+                  child: const Text(
+                    "Contact",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold),
+                  ),
                 ),
                 const SizedBox(
                   width: 5,
@@ -75,9 +81,9 @@ class _Home extends State<Home> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                const Column(
+                Column(
                   children: [
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
@@ -89,7 +95,7 @@ class _Home extends State<Home> {
                         ),
                       ],
                     ),
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
@@ -101,38 +107,75 @@ class _Home extends State<Home> {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
+                    ),
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: 400,
+                          child: Text(
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold),
+                            'Variety is a totally free dating app for singles. You can search millions of members and communicate with them totally free. A credit card is never needed!',
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 20,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold),
-                          'Variety is a totally free dating app for singles. You can search millions of members and comminuate with them totally free. A credit card is never needed!',
+                        InkWell(
+                          onTap: () {},
+                          child: SizedBox(
+                              height: 65,
+                              width: 210,
+                              child: Image.asset(
+                                'lib/assets/images/appstorenew.png',
+                                fit: BoxFit.fill,
+                              )),
                         ),
+                        InkWell(
+                          onTap: () {},
+                          child: SizedBox(
+                              height: 100,
+                              width: 250,
+                              child: Image.asset(
+                                'lib/assets/images/googleplaynew.png',
+                                fit: BoxFit.fill,
+                              )),
+                        )
                       ],
                     )
                   ],
                 ),
                 const SizedBox(
-                  width: 50,
+                  width: 70,
                 ),
                 Column(
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        SizedBox(
-                            height: 800,
-                            width: 500,
-                            child: Image.asset(
-                              'lib/assets/images/nearby.png',
-                              fit: BoxFit.fill,
-                            ))
+                        Container(
+                          height: 800,
+                          width: 450,
+                          decoration: BoxDecoration(
+                              borderRadius:
+                                  const BorderRadius.all(Radius.circular(0)),
+                              border: Border.all(color: Colors.white)),
+                          child: Image.asset(
+                            'lib/assets/images/nearby.png',
+                            fit: BoxFit.fill,
+                          ),
+                        )
                       ],
                     ),
                   ],
