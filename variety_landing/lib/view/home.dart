@@ -13,25 +13,77 @@ class _Home extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(38, 38, 38, 1),
+        backgroundColor: Colors.black,
         title: Text(
           widget.title,
-          style: TextStyle(color: Colors.white),
+          style: const TextStyle(
+              color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
         ),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Row(
+      body: Container(
+        color: Colors.black,
+        child: const Center(
+          child: Padding(
+            padding: EdgeInsets.fromLTRB(0, 100, 0, 0),
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text(
-                  'You have pushed the button this many times:',
+              children: <Widget>[
+                Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 40,
+                              fontWeight: FontWeight.bold),
+                          'Free Dating',
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 40,
+                              fontWeight: FontWeight.bold),
+                          'For Singles Worldwide',
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold),
+                          textAlign: TextAlign.center,
+                          'Variety is a totally free dating app for singles. You can search millions of members and comminuate with them totally free. A credit card is never needed!',
+                        ),
+                      ],
+                    )
+                  ],
                 ),
+                Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Free Dating',
+                        ),
+                      ],
+                    ),
+                  ],
+                )
               ],
-            )
-          ],
+            ),
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
