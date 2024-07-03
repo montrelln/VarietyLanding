@@ -23,27 +23,27 @@ class _Home extends State<Home> {
                   fontSize: 14,
                   fontWeight: FontWeight.bold),
             ),
-            Expanded(
+            const Expanded(
               child: SizedBox(),
             ),
-            Text(
+            const Text(
               "Home",
-              style: const TextStyle(
+              style: TextStyle(
                   color: Colors.white,
                   fontSize: 14,
                   fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               width: 10,
             ),
-            Text(
+            const Text(
               "Contact",
-              style: const TextStyle(
+              style: TextStyle(
                   color: Colors.white,
                   fontSize: 14,
                   fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               width: 5,
             ),
           ],
@@ -51,13 +51,13 @@ class _Home extends State<Home> {
       ),
       body: Container(
         color: Colors.black,
-        child: const Center(
+        child: Center(
           child: Padding(
-            padding: EdgeInsets.fromLTRB(0, 100, 0, 0),
+            padding: const EdgeInsets.fromLTRB(0, 100, 0, 0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Column(
+                const Column(
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -100,14 +100,21 @@ class _Home extends State<Home> {
                     )
                   ],
                 ),
+                const SizedBox(
+                  width: 50,
+                ),
                 Column(
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
-                          'Free Dating',
-                        ),
+                        SizedBox(
+                            height: 500,
+                            width: 300,
+                            child: Image.asset(
+                              'lib/assets/images/nearby.png',
+                              fit: BoxFit.fill,
+                            ))
                       ],
                     ),
                   ],
