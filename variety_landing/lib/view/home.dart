@@ -26,9 +26,7 @@ class _Home extends State<Home> {
         queryParameters: {'subject': 'Support', 'body': ""},
       );
       url.launchUrl(emailLaunchUri);
-    } catch (e) {
-      print(e);
-    }
+    } catch (e) {}
   }
 
   void updateNeedsAdjustmentForPhone(context) {
