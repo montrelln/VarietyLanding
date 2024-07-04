@@ -317,7 +317,7 @@ class _Home extends State<Home> {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Padding(
-            padding: EdgeInsets.fromLTRB(0, 0, 30, 10),
+            padding: EdgeInsets.fromLTRB(0, 10, 30, 10),
             child: Text(
               "© Variety Dating 2024",
               style: TextStyle(
