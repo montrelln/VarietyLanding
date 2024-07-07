@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart' as url;
+import 'package:variety_landing/view/policy.dart';
 
 class Home extends StatefulWidget {
   final title;
@@ -69,12 +70,18 @@ class _Home extends State<Home> {
               const Expanded(
                 child: SizedBox(),
               ),
-              const Text(
-                "Home",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold),
+              InkWell(
+                onTap: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (builder) => const Policy()));
+                },
+                child: const Text(
+                  "Policy",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold),
+                ),
               ),
               const SizedBox(
                 width: 10,
