@@ -223,7 +223,10 @@ class _Home extends State<Home> {
                         )),
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      url.launchUrl(Uri.parse(
+                          'https://play.google.com/store/apps/details?id=com.varietydatingllc.app'));
+                    },
                     child: SizedBox(
                         height: 100,
                         width: 250,
@@ -248,7 +251,10 @@ class _Home extends State<Home> {
                         )),
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      url.launchUrl(Uri.parse(
+                          'https://play.google.com/store/apps/details?id=com.varietydatingllc.app'));
+                    },
                     child: SizedBox(
                         height: 100,
                         width: 250,
@@ -268,29 +274,14 @@ class _Home extends State<Home> {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Stack(
-              children: [
-                SizedBox(
-                  height: 800,
-                  width: adjustForPhone == true ? 300 : 400,
-                  child: Image.asset(
-                    'lib/assets/images/blankphone.jpg',
-                    fit: BoxFit.fill,
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(35, 50, 0, 0),
-                  child: SizedBox(
-                    height: 700,
-                    width: adjustForPhone == true ? 225 : 320,
-                    child: Image.asset(
-                      'lib/assets/images/nearby.png',
-                      fit: BoxFit.fill,
-                    ),
-                  ),
-                ),
-              ],
-            )
+            SizedBox(
+              height: 800,
+              width: adjustForPhone == true ? 300 : 400,
+              child: Image.asset(
+                'lib/assets/images/nearby.jpeg',
+                fit: BoxFit.fill,
+              ),
+            ),
           ],
         ),
       ],
