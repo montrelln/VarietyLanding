@@ -213,7 +213,10 @@ class _Home extends State<Home> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      url.launchUrl(Uri.parse(
+                          'https://apps.apple.com/app/variety-dating-llc/id6511214740'));
+                    },
                     child: SizedBox(
                         height: 65,
                         width: 210,
@@ -241,7 +244,10 @@ class _Home extends State<Home> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      url.launchUrl(Uri.parse(
+                          'https://apps.apple.com/app/variety-dating-llc/id6511214740'));
+                    },
                     child: SizedBox(
                         height: 65,
                         width: 210,
