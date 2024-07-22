@@ -33,6 +33,29 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyCABqlEmmFwGJ9QZ_Zd2ubrdf8fSiKZceg",
+      authDomain: "variety-dating-netweb.firebaseapp.com",
+      projectId: "variety-dating-netweb",
+      storageBucket: "variety-dating-netweb.appspot.com",
+      messagingSenderId: "861308737130",
+      appId: "1:861308737130:web:c750146dfe9d8236239c13",
+      measurementId: "G-W7MBY19Z1C"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
