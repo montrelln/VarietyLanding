@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "861308737130",
+    "project_id": "variety-dating-netweb",
+    "storage_bucket": "variety-dating-netweb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:861308737130:android:e47c41da20a58842239c13",
+        "android_client_info": {
+          "package_name": "com.varietydatingweb.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0wWOAco6lYvziHhALKulfahMd1brwkko"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
