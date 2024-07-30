@@ -1,6 +1,8 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart' as url;
 import 'package:variety_landing/view/policy.dart';
+import 'dart:html' as html;
 
 class Home extends StatefulWidget {
   final title;
@@ -17,6 +19,27 @@ class _Home extends State<Home> {
     super.initState();
     WidgetsBinding.instance
         .addPostFrameCallback((_) => updateNeedsAdjustmentForPhone(context));
+
+    checkDevice();
+  }
+
+  void checkDevice() {
+    final bool isIos = kIsWeb && (defaultTargetPlatform == TargetPlatform.iOS);
+
+    if (isIos == true) {
+      html.window.open(
+          'https://apps.apple.com/us/app/variety-dating-llc/id6511214740',
+          'Variety');
+    }
+
+    final bool isAndroid =
+        kIsWeb && (defaultTargetPlatform == TargetPlatform.android);
+
+    if (isAndroid == true) {
+      html.window.open(
+          'https://play.google.com/store/apps/details?id=com.varietydatingllc.app',
+          'Variety');
+    }
   }
 
   void _sendEmail() {
